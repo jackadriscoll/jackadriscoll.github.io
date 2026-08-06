@@ -1,2 +1,2 @@
 # jackadriscoll.github.io
-Jack Driscoll Portfolio
+Jack Driscoll Portfolio site
