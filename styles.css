@@ -485,6 +485,11 @@ nav a:focus-visible {
   width: 100%;
 }
 
+.release-video {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
 .release-embed-block {
   margin: 0 auto 34px;
 }
