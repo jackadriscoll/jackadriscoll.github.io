@@ -17,6 +17,7 @@
     <meta name="description" content="Producer, mix and mastering engineer working across recording, production and artist development.">
     <link rel="icon" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
+    <script src="portfolio-filter.js" defer></script>
   </head>
   <body>
     <main class="site-shell">
@@ -31,6 +32,16 @@
           <a href="about/index.html">About</a>
           <a href="contact/index.html">Contact</a>
         </nav>
+
+        <div class="portfolio-filter portfolio-filter-desktop" role="group" aria-label="Filter work by service">
+          <span class="portfolio-filter-label">Filter work</span>
+          <button class="portfolio-filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="portfolio-filter-button" type="button" data-filter="mastering" aria-pressed="false">Mastering</button>
+          <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
+          <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
+          <button class="portfolio-filter-button" type="button" data-filter="recording" aria-pressed="false">Recording</button>
+          <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+        </div>
       </aside>
 
       <section class="content" id="work" aria-label="Work">
@@ -43,6 +54,16 @@
             <a href="contact/index.html">Contact</a>
           </nav>
         </div>
+
+          <div class="portfolio-filter portfolio-filter-mobile" role="group" aria-label="Filter work by service">
+            <span class="portfolio-filter-label">Filter work</span>
+            <button class="portfolio-filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="portfolio-filter-button" type="button" data-filter="mastering" aria-pressed="false">Mastering</button>
+            <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
+            <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
+            <button class="portfolio-filter-button" type="button" data-filter="recording" aria-pressed="false">Recording</button>
+            <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          </div>
 
         <div class="project-grid">
 <article class="project-card" id="little-grandad-rogue-sarnies-after-hours-2026">

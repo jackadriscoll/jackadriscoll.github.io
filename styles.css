@@ -102,6 +102,66 @@ nav a:focus-visible {
   margin-top: 28px;
 }
 
+.portfolio-filter {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+}
+
+.portfolio-filter-label {
+  color: #b0b0b0;
+  font-size: 11px;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.portfolio-filter-button {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 9px;
+  padding: 0 0 1px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.portfolio-filter-button:hover,
+.portfolio-filter-button:focus-visible {
+  color: #111111;
+}
+
+.portfolio-filter-button.is-active {
+  border-bottom-color: #222222;
+  color: #222222;
+}
+
+.portfolio-filter-mobile {
+  display: none;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
 .content {
   min-width: 0;
 }
@@ -481,6 +541,23 @@ nav a:focus-visible {
   .mobile-nav a {
     color: var(--muted);
     font-size: 14px;
+  }
+
+  .portfolio-filter-mobile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 28px 0 34px;
+  }
+
+  .portfolio-filter-mobile .portfolio-filter-label {
+    flex-basis: 100%;
+    margin-bottom: 4px;
+  }
+
+  .portfolio-filter-mobile .portfolio-filter-button {
+    margin-bottom: 0;
   }
 
   .project-grid,
