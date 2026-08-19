@@ -38,7 +38,6 @@
           <button class="portfolio-filter-button" type="button" data-filter="mastering" aria-pressed="false">Mastering</button>
           <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
           <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
-          <button class="portfolio-filter-button" type="button" data-filter="recording" aria-pressed="false">Recording</button>
           <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
         </div>
       </aside>
@@ -60,7 +59,6 @@
             <button class="portfolio-filter-button" type="button" data-filter="mastering" aria-pressed="false">Mastering</button>
             <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
             <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
-            <button class="portfolio-filter-button" type="button" data-filter="recording" aria-pressed="false">Recording</button>
             <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
           </div>
 
@@ -75,7 +73,7 @@
                   <strong>2026</strong>
                   <em>Live Session - Communion</em>
                   <ul aria-label="Little Grandad: Rogue Sarnies After Hours credits">
-                    <li>Mixing</li><li>Mastering</li><li>Recording</li>
+                    <li>Mixing</li><li>Mastering</li><li>Engineering</li>
                   </ul>
                 </div>
               </article>
@@ -397,7 +395,7 @@
                   <strong>2022</strong>
                   <em>Cassette EP - Utarid Tapes</em>
                   <ul aria-label="Time and Why It Doesn&#39;t Deserve Us credits">
-                    <li>Recording</li>
+                    <li>Engineering</li>
                   </ul>
                 </div>
               </article>
@@ -537,7 +535,6 @@
         "mastering",
         "mixing",
         "production",
-        "recording",
         "engineering"
       ]);
       const cards = Array.from(document.querySelectorAll(".project-card"));
@@ -556,7 +553,6 @@
         if (credits.includes("mastering")) services.push("mastering");
         if (credits.includes("mixing")) services.push("mixing");
         if (credits.includes("producer")) services.push("production");
-        if (credits.includes("recording")) services.push("recording");
         if (credits.some((credit) => credit.includes("engineering"))) services.push("engineering");
     
         card.dataset.services = services.join(" ");
