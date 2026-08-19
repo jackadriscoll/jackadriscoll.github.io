@@ -4,7 +4,6 @@
     "mastering",
     "mixing",
     "production",
-    "recording",
     "engineering"
   ]);
   const cards = Array.from(document.querySelectorAll(".project-card"));
@@ -22,8 +21,7 @@
 
     if (credits.includes("mastering")) services.push("mastering");
     if (credits.includes("mixing")) services.push("mixing");
-    if (credits.includes("producer")) services.push("production");
-    if (credits.includes("recording")) services.push("recording");
+    if (credits.includes("producer") || credits.includes("production")) services.push("production");
     if (credits.some((credit) => credit.includes("engineering"))) services.push("engineering");
 
     card.dataset.services = services.join(" ");
