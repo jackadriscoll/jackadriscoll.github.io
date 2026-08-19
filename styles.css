@@ -325,13 +325,20 @@ nav a:focus-visible {
 }
 
 .about-portrait {
-  margin: 0 0 34px;
-  max-width: 760px;
+  float: left;
+  margin: 0 28px 18px 0;
+  width: min(42%, 300px);
 }
 
 .about-portrait img {
   height: auto;
   width: 100%;
+}
+
+.text-page::after {
+  clear: both;
+  content: "";
+  display: block;
 }
 
 .text-page p {
@@ -615,6 +622,12 @@ nav a:focus-visible {
 
   .section-heading h2 {
     font-size: 22px;
+  }
+
+  .about-portrait {
+    float: none;
+    margin: 0 0 28px;
+    width: min(100%, 420px);
   }
 
   .release-heading h1 {
