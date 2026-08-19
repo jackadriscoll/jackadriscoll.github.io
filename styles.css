@@ -486,7 +486,7 @@ nav a:focus-visible {
 }
 
 .release-video {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--video-aspect-ratio, 16 / 9);
   height: auto;
 }
 
