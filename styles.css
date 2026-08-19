@@ -326,7 +326,7 @@ nav a:focus-visible {
 
 .about-portrait {
   margin: 0 0 32px;
-  width: min(100%, 680px);
+  width: min(100%, 750px);
 }
 
 .about-portrait img {
