@@ -324,6 +324,16 @@ nav a:focus-visible {
   max-width: 760px;
 }
 
+.about-portrait {
+  margin: 0 0 34px;
+  max-width: 760px;
+}
+
+.about-portrait img {
+  height: auto;
+  width: 100%;
+}
+
 .text-page p {
   color: #555555;
   font-size: 17px;
