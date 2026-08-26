@@ -41,6 +41,7 @@
           <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
           <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
           <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          <button class="portfolio-filter-button" type="button" data-filter="live-recordings" aria-pressed="false">Live Recordings</button>
         </div>
       </aside>
 
@@ -62,6 +63,7 @@
             <button class="portfolio-filter-button" type="button" data-filter="mixing" aria-pressed="false">Mixing</button>
             <button class="portfolio-filter-button" type="button" data-filter="production" aria-pressed="false">Production</button>
             <button class="portfolio-filter-button" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          <button class="portfolio-filter-button" type="button" data-filter="live-recordings" aria-pressed="false">Live Recordings</button>
           </div>
 
         <div class="project-grid">
@@ -185,7 +187,7 @@
                   <h2><a href="releases/mary-in-the-junkyard-windmill-secret-set-2026/index.html">Mary in the Junkyard: Secret Set at The Windmill</a></h2>
                   <p>Mary in the Junkyard</p>
                   <strong>2026</strong>
-                  <em>Live Set - The Windmill, Brixton</em>
+                  <em>Live Recording - The Windmill, Brixton</em>
                   <ul aria-label="Mary in the Junkyard: Secret Set at The Windmill credits">
                     <li>Mixing</li><li>Mastering</li>
                   </ul>
@@ -199,7 +201,7 @@
                   <h2><a href="releases/soft-windmill-single-release-show-2025/index.html">SOFT: Single Release Show at The Windmill</a></h2>
                   <p>SOFT</p>
                   <strong>2025</strong>
-                  <em>Live Set - The Windmill, Brixton</em>
+                  <em>Live Recording - The Windmill, Brixton</em>
                   <ul aria-label="SOFT: Single Release Show at The Windmill credits">
                     <li>Mixing</li><li>Mastering</li>
                   </ul>
@@ -213,7 +215,7 @@
                   <h2><a href="releases/little-grandad-windmill-live-set-2025/index.html">Little Grandad: Live at The Windmill</a></h2>
                   <p>Little Grandad</p>
                   <strong>2025</strong>
-                  <em>Live Set - The Windmill, Brixton</em>
+                  <em>Live Recording - The Windmill, Brixton</em>
                   <ul aria-label="Little Grandad: Live at The Windmill credits">
                     <li>Mixing</li><li>Mastering</li>
                   </ul>
@@ -635,7 +637,8 @@
         "mastering",
         "mixing",
         "production",
-        "engineering"
+        "engineering",
+        "live-recordings"
       ]);
       const cards = Array.from(document.querySelectorAll(".project-card"));
       const buttons = Array.from(document.querySelectorAll(".portfolio-filter-button"));
@@ -648,12 +651,14 @@
       cards.forEach((card) => {
         const credits = Array.from(card.querySelectorAll(".project-meta li"))
           .map((credit) => credit.textContent.trim().toLowerCase());
+        const releaseType = card.querySelector(".project-meta em")?.textContent.trim().toLowerCase() || "";
         const services = [];
     
         if (credits.includes("mastering")) services.push("mastering");
         if (credits.includes("mixing")) services.push("mixing");
         if (credits.includes("producer") || credits.includes("production")) services.push("production");
         if (credits.some((credit) => credit.includes("engineering"))) services.push("engineering");
+        if (releaseType.includes("live recording")) services.push("live-recordings");
     
         card.dataset.services = services.join(" ");
       });
@@ -682,7 +687,7 @@
     
         status.textContent = filter === "all"
           ? `Showing all ${visibleCount} projects.`
-          : `Showing ${visibleCount} ${filter} projects.`;
+          : `Showing ${visibleCount} ${filter.replaceAll("-", " ")} projects.`;
     
         if (updateUrl) {
           const url = new URL(window.location.href);

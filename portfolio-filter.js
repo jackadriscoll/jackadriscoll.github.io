@@ -4,7 +4,8 @@
     "mastering",
     "mixing",
     "production",
-    "engineering"
+    "engineering",
+    "live-recordings"
   ]);
   const cards = Array.from(document.querySelectorAll(".project-card"));
   const buttons = Array.from(document.querySelectorAll(".portfolio-filter-button"));
@@ -17,12 +18,14 @@
   cards.forEach((card) => {
     const credits = Array.from(card.querySelectorAll(".project-meta li"))
       .map((credit) => credit.textContent.trim().toLowerCase());
+    const releaseType = card.querySelector(".project-meta em")?.textContent.trim().toLowerCase() || "";
     const services = [];
 
     if (credits.includes("mastering")) services.push("mastering");
     if (credits.includes("mixing")) services.push("mixing");
     if (credits.includes("producer") || credits.includes("production")) services.push("production");
     if (credits.some((credit) => credit.includes("engineering"))) services.push("engineering");
+    if (releaseType.includes("live recording")) services.push("live-recordings");
 
     card.dataset.services = services.join(" ");
   });
@@ -51,7 +54,7 @@
 
     status.textContent = filter === "all"
       ? `Showing all ${visibleCount} projects.`
-      : `Showing ${visibleCount} ${filter} projects.`;
+      : `Showing ${visibleCount} ${filter.replaceAll("-", " ")} projects.`;
 
     if (updateUrl) {
       const url = new URL(window.location.href);
